@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1><%= title %></h1>
+    <div id="message"><%= message %></div>
+        <table>
+          <tr>
+            <th >ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of birth</th>
+            <th>tuition fees</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <% 
+          var options = {
+            weekday: "short",
+            year: "numeric",
+            month: "2-digit",
+             day: "numeric"
+                    };
+
+          for(var i = 0; i < students.length; i++){ %>
+          <tr>
+            <td><%= students[i].student_id %></td>
+            <%console.log(students[i].student_id)%>
+            <td><%= students[i].first_name %></td>
+            <td><%= students[i].last_name %></td>
+            <td><%= new Intl.DateTimeFormat().format(students[i].dateOfBirth) %></td>
+            <td><%= students[i].tuitionFees %></td>
+            <td><a href="<%= url + '/edit/' + students[i].student_id %>"> Edit</a></td>
+            <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= students[i].student_id %>')"> Delete</button></td>
+          </tr>
+          <% }; %>
+        </table>
+        <a class="button-links" href="<%= url + '/add/' %>" ><button class="button" type="button" >Add new student</button></a>
+        <a class="button-links" href="<%= home %>" > <button class="button" type="button" >Home</button></a>
+        
+        <script>
+          function deleteEntry(url) {
+            var dialog = confirm("Hold your horses cowboy are you sure?");
+            if(dialog) {
+              window.location.replace(url);
+            } else alert("Think about it.. no worries no rush");
+          }
+        </script>
+      
+</body>
+</html>

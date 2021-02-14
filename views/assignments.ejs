@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <h1><%= title %></h1>
+  <div id="message"><%= message %></div>
+      <table>
+        <tr>
+          <th >ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Oral Mark</th>
+          <th>Total Mark</th>
+          <th>Submition date</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% 
+        var options = {
+          weekday: "short",
+          year: "numeric",
+          month: "2-digit",
+           day: "numeric"
+                  };
+
+        for(var i = 0; i < assignment.length; i++){ %>
+        <tr>
+          <td><%= assignment[i].assignment_id %></td>
+          <%console.log(assignment[i].assignment_id)%>
+          <td><%= assignment[i].title %></td>
+          <td><%= assignment[i].description %></td>
+          <td><%= assignment[i].type %></td>
+          <td><%= assignment[i].oralMark %></td>
+          <td><%= assignment[i].totalMark %></td>
+          <td><%= new Intl.DateTimeFormat().format(assignment[i].subDateTime) %></td>
+          <td><a href="<%= url + '/edit/' + assignment[i].assignment_id %>"> Edit</a></td>
+          <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= assignment[i].assignment_id %>')"> Delete</button></td>
+        </tr>
+        <% }; %>
+      </table>
+      <a class="button-links" href="<%= home %>" > <button class="button" type="button" >Home</button></a>
+  
+      
+      <script>
+        function deleteEntry(url) {
+          var dialog = confirm("Hold your horses cowboy are you sure?");
+          if(dialog) {
+            window.location.replace(url);
+          } else alert("Think about it.. no worries no rush");
+        }
+      </script>
+    
+</body>
+</html>

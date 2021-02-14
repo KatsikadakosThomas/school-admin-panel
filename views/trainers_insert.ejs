@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="message"><%= message %></div>
+    <h1><%= title %></h1>
+    <div class="container">
+      <form action="" method="post">
+        
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstName" placeholder="Your name..">
+     
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastName" placeholder="Your last name..">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="enter a subject">
+     
+         <input type="submit" value="Submit">
+         
+       </form>
+     </div>
+
+     <a class="button-links" href="<%= home %>" > <button class="button" type="button" >Home</button></a>
+
+  </body> 
+</html>
