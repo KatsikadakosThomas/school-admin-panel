@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="message"><%= message %></div>
+    <h1><%= title %></h1>
+    <div class="container">
+      <form action="/courses/update" method="post">
+        
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<%= courses.title %>">
+     
+        <label for="stream">Stream</label>
+        <input type="text" id="stream" name="stream" value="<%= courses.stream %>">
+
+        <label for="type">Type</label>
+        <input type="text" id="type" name="type" value="<%= courses.type %>">
+
+        <label for="startingDate">Starting date</label>
+        <input type="date" id="startingDate" name="startingDate" value="<%= courses.start_date %>">
+
+        <label for="endingDate">Ending date</label>
+        <input type="date" id="endingDate" name="endingDate" value="<%= courses.end_date %>">
+
+        <input type="number" id="courses_id" name="courses_id" hidden  value="<%= courses.courses_id %>">
+         <input type="submit" value="Submit">
+         
+       </form>
+     </div>
+
+     <a class="button-links" href="<%= back %>" > <button class="button" type="button" >Back</button></a>
+
+  </body> 
+</html>

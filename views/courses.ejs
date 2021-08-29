@@ -4,9 +4,8 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1>
-        <%= title %>
-      </h1>
+    <h1><%= title %></h1>
+    <div id="message"><%= message %></div>
       <table>
         <tr>
           <th >ID</th>
@@ -37,15 +36,15 @@
           <td><%= new Intl.DateTimeFormat().format(courses[i].start_date) %></td>
           <td><%= new Intl.DateTimeFormat().format(courses[i].end_date) %></td>
           <%console.log(new Intl.DateTimeFormat().format(courses[i].end_date))%>
-          <td><a href="<%= url + '/edit/' + courses[i].courses_id %>"> Edit</a></td>
+          <td><a href="<%= url + '/edit/' + courses[i].courses_id %>"> <button>Edit</button></a></td>
           <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= courses[i].courses_id %>')"> Delete</button></td>
         </tr>
         <% }; %>
       </table>
-      
+      <a class="button-links" href="<%= url + '/add/' %>" ><button class="button" type="button" >Add new course</button></a>
       <a class="button-links" href="<%= home %>" > <button class="button" type="button" >Home</button></a>
 
-      <div id="error"><%= message %></div>
+
       <script>
         function deleteEntry(url) {
           var dialog = confirm("Hold your horses cowboy are you sure?");

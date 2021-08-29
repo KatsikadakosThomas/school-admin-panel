@@ -36,11 +36,12 @@
           <td><%= assignment[i].oralMark %></td>
           <td><%= assignment[i].totalMark %></td>
           <td><%= new Intl.DateTimeFormat().format(assignment[i].subDateTime) %></td>
-          <td><a href="<%= url + '/edit/' + assignment[i].assignment_id %>"> Edit</a></td>
+          <td><a href="<%= url + '/edit/' + assignment[i].assignment_id %>"> <button>Edit</button></a></td>
           <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= assignment[i].assignment_id %>')"> Delete</button></td>
         </tr>
         <% }; %>
       </table>
+      <a class="button-links" href="<%= url + '/add/' %>" ><button class="button" type="button" >Add new assignment</button></a>
       <a class="button-links" href="<%= home %>" > <button class="button" type="button" >Home</button></a>
   
       

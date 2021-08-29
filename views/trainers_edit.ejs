@@ -8,16 +8,16 @@
     <div id="message"><%= message %></div>
     <h1><%= title %></h1>
     <div class="container">
-      <form action="" method="post">
+      <form action="/trainers/update" method="post">
         
         <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstName" placeholder="Your name..">
+        <input type="text" id="fname" name="firstName" value="<%= trainers.first_name %>">
      
         <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastName" placeholder="Your last name..">
+        <input type="text" id="lname" name="lastName" value="<%= trainers.last_name %>">
         <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="enter a subject">
-     
+        <input type="text" id="subject" name="subject" value="<%= trainers.subject %>">
+        <input type="number" id="trainers_id" name="trainers_id" hidden  value="<%= trainers.trainer_id %>">
          <input type="submit" value="Submit">
          
        </form>

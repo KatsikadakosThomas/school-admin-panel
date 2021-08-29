@@ -8,7 +8,7 @@
     <div id="message"><%= message %></div>
     <h1><%= title %></h1>
     <div class="container">
-      <form action="" method="post">
+      <form action="/students/update" method="POST">
         
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstName" value="<%= students.first_name %>">
@@ -17,10 +17,11 @@
         <input type="text" id="lname" name="lastName" value="<%= students.last_name %>">
      
         <label for="dateOfBirth">Date of Birth</label>
-        <input type="text" id="dateOfBirth" name="dateOfBirth" value="<%= new Intl.DateTimeFormat().format(students.dateOfBirth) %>">
+        <input type="date" id="dateOfBirth" name="dateOfBirth" value="<%= students.dateOfBirth %>">
      
         <label for="tuitionFees">Tuition Fees</label>
         <input type="number" id="tuitionFees" name="tuitionFees" value="<%= students.tuitionFees %>">
+        <input type="number" id="students_id" name="students_id" hidden  value="<%= students.student_id %>">
      
          <input type="submit" value="Submit">
          

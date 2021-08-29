@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="message"><%= message %></div>
+    <h1><%= title %></h1>
+    <div class="container">
+      <form action="/assignments/update" method="post">
+        
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<%= assignment.title %>">
+     
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" value="<%= assignment.description %>">
+
+        <label for="type">Type</label>
+        <input type="text" id="type" name="type" value="<%= assignment.type %>">
+
+        <label for="oralMark">Oral mark</label>
+        <input type="number" id="oralMark" name="oralMark" value="<%= assignment.oralMark %>">
+
+        <label for="totalMark">Total mark</label>
+        <input type="number" id="totalMark" name="totalMark" max="100" value="<%= assignment.totalMark %>">
+        <br>
+        <label for="subDateTime">Submission date</label>
+        <input type="date" id="subDateTime" name="subDateTime" value="<%= assignment.subDateTime %>">
+
+        <input type="number" id="assignment_id" name="assignment_id" hidden  value="<%= assignment.assignment_id %>">
+         <input type="submit" value="Submit">
+         
+       </form>
+     </div>
+
+     <a class="button-links" href="<%= back %>" > <button class="button" type="button" >Back</button></a>
+
+  </body> 
+</html>

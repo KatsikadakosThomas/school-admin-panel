@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="message"><%= message %></div>
+    <h1><%= title %></h1>
+    <div class="container">
+      <form action="" method="post">
+
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="enter title..">
+     
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="enter description..">
+
+        <label for="type">Type</label>
+        <input type="text" id="type" name="type" placeholder="enter type..">
+
+        <label for="oralMark">Oral Mark</label>
+        <input type="number" id="oralMark" name="oralMark" placeholder="enter oral mark..">
+
+        <label for="totalMark">Total Mark</label>
+        <input type="number" id="totalMark" max="100" name="totalMark" placeholder="enter total mark..">
+        <br>
+        <label for="subDateTime">Submission date</label>
+        <input type="date" id="subDateTime" name="subDateTime">
+        
+     
+         <input type="submit" value="Submit">
+         
+       </form>
+     </div>
+
+     <a class="button-links" href="<%= back %>" > <button class="button" type="button" >Back</button></a>
+
+  </body> 
+</html>

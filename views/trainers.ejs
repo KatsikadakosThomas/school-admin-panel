@@ -25,8 +25,8 @@
           <td><%= trainers[i].first_name %></td>
           <td><%= trainers[i].last_name %></td>
           <td><%= trainers[i].subject %></td>
-          <td><a href="<%= url + '/edit/' + trainers[i].student_id %>"> Edit</a></td>
-          <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= trainers[i].student_id %>')"> Delete</button></td>
+          <td><a href="<%= url + '/edit/' + trainers[i].trainer_id %>"> <button>Edit</button></a></td>
+          <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= trainers[i].trainer_id %>')"> Delete</button></td>
         </tr>
         <% }; %>
       </table>
