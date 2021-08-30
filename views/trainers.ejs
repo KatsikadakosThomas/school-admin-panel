@@ -24,13 +24,13 @@
           <td><%= trainers[i].first_name %></td>
           <td><%= trainers[i].last_name %></td>
           <td><%= trainers[i].subject %></td>
-          <td><a href="<%= url + '/edit/' + trainers[i].trainer_id %>"> <button>Edit</button></a></td>
+          <td><a href="<%= 'https://school-app-tomka.herokuapp.com/' + '/edit/' + trainers[i].trainer_id %>"> <button>Edit</button></a></td>
           <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= trainers[i].trainer_id %>')"> Delete</button></td>
         </tr>
         <% }; %>
       </table>
-      <a class="button-links" href="<%= url + '/add/' %>" ><button class="button" type="button" >Add new trainer</button></a>
-      <a class="button-links" href="<%= home %>" > <button class="button" type="button" >Home</button></a>
+      <a class="button-links" href="https://school-app-tomka.herokuapp.com/courses/add/" ><button class="button" type="button" >Add new trainer</button></a>
+      <a class="button-links" href="https://school-app-tomka.herokuapp.com/" > <button class="button" type="button" >Home</button></a>
       
       <script>
         function deleteEntry(url) {
