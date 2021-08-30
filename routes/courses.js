@@ -34,7 +34,7 @@ router.get("/list/:message?", function (req, res, next) {
 //GET ADD PAGE
 router.get("/add/", function (req, res, next) {
   var indexUrl = req.protocol + "://" + req.get("host") + "/courses/list";
-  console.log(req.get("host"));
+
   res.render("courses_insert", {
     title: "Add new course",
     message: "",
@@ -99,10 +99,9 @@ router.get("/edit/:id", function (req, res, next) {
 
   dbconnection.execute(query, [Id], function (err, result, fields) {
     let courses = result[0];
-    console.log(courses);
+
     courses.start_date = dateTime.format(courses.start_date, "YYYY-MM-DD");
     courses.end_date = dateTime.format(courses.end_date, "YYYY-MM-DD");
-    console.log(courses);
 
     res.render("courses_edit", {
       title: "Edit courses",
@@ -121,7 +120,6 @@ router.post("/update", function (req, res, next) {
     type: req.body.type,
     id: req.body.courses_id,
   };
-  console.log(course);
 
   const query =
     "UPDATE `courses` SET `title` ='" +
@@ -140,7 +138,6 @@ router.post("/update", function (req, res, next) {
 
   dbconnection.query(query, function (err, status) {
     if (err) {
-      console.log(query);
       res.render("courses_edit", {
         title: "courses - Edit",
         message: "Update failed! Check the values again!",

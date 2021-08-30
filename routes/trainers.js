@@ -30,7 +30,7 @@ router.get("/list/:message?", function (req, res, next) {
 //GET ADD PAGE
 router.get("/add/", function (req, res, next) {
   var indexUrl = req.protocol + "://" + req.get("host") + "/trainers/list";
-  console.log(req.get("host"));
+
   res.render("trainers_insert", {
     title: "Add new trainer",
     message: "",
@@ -92,8 +92,6 @@ router.get("/edit/:id", function (req, res, next) {
   dbconnection.execute(query, [Id], function (err, result, fields) {
     let trainers = result[0];
 
-    console.log(trainers);
-
     res.render("trainers_edit", {
       title: "Edit trainers",
       message: "",
@@ -111,7 +109,6 @@ router.post("/update", function (req, res, next) {
     subject: req.body.subject,
     id: req.body.trainers_id,
   };
-  console.log(trainer);
 
   const query =
     "UPDATE `trainers` SET `first_name` ='" +
@@ -126,7 +123,6 @@ router.post("/update", function (req, res, next) {
 
   dbconnection.query(query, function (err, status) {
     if (err) {
-      console.log(query);
       res.render("trainers_edit", {
         title: "trainers - Edit",
         message: "Update failed! Check the values again!",

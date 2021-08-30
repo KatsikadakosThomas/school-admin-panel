@@ -8,7 +8,7 @@ router.get("/list/:message?", function (req, res, next) {
   const query = "SELECT * FROM assignment";
   var fullUrl = req.protocol + "://" + req.get("host") + req.baseUrl;
   var indexUrl = req.protocol + "://" + req.get("host");
-  console.log(req.query);
+
   dbconnection.query(query, function (err, rows) {
     if (err) {
       res.render("assignments", {
@@ -31,7 +31,7 @@ router.get("/list/:message?", function (req, res, next) {
 //GET ADD PAGE
 router.get("/add/", function (req, res, next) {
   var indexUrl = req.protocol + "://" + req.get("host") + "/assignments/list";
-  console.log(req.get("host"));
+
   res.render("assignment_insert", {
     title: "Add new assignment",
     message: "",
@@ -100,12 +100,11 @@ router.get("/edit/:id", function (req, res, next) {
 
   dbconnection.execute(query, [Id], function (err, result, fields) {
     let assignment = result[0];
-    console.log(assignment);
+
     assignment.subDateTime = dateTime.format(
       assignment.subDateTime,
       "YYYY-MM-DD"
     );
-    console.log(assignment);
 
     res.render("assignment_edit", {
       title: "Edit assignments",
@@ -127,7 +126,6 @@ router.post("/update", function (req, res, next) {
     subDateTime: req.body.subDateTime,
     id: req.body.assignment_id,
   };
-  console.log(assignment);
 
   const query =
     "UPDATE `assignment` SET `title` ='" +
@@ -148,7 +146,6 @@ router.post("/update", function (req, res, next) {
 
   dbconnection.query(query, function (err, status) {
     if (err) {
-      console.log(query);
       res.render("assignment_edit", {
         title: "assignment - Edit",
         message: "Update failed! Check the values again!",

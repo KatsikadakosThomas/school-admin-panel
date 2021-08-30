@@ -9,7 +9,7 @@ router.get("/list/:message?", function (req, res, next) {
   const query = "SELECT * FROM students";
   var fullUrl = req.protocol + "://" + req.get("host") + req.baseUrl;
   var indexUrl = req.protocol + "://" + req.get("host");
-  console.log(req.query);
+
   dbconnection.query(query, function (err, rows) {
     if (err) {
       res.render("students", {
@@ -69,8 +69,7 @@ router.post("/add", function (req, res, next) {
 router.get("/delete/:id", function (req, res, next) {
   var query = "DELETE FROM `students` WHERE `student_id` = ?";
   const Id = req.params.id;
-  console.log(Id);
-  console.log(query);
+
   dbconnection.execute(query, [Id], function (err, result, fields) {
     console.log(result);
     console.log(err);
@@ -96,8 +95,6 @@ router.get("/edit/:id", function (req, res, next) {
     let students = result[0];
     //convert date to html input friendly format
     students.dateOfBirth = dateTime.format(students.dateOfBirth, "YYYY-MM-DD");
-
-    console.log(students);
 
     res.render("students_edit", {
       title: "Edit Students",
