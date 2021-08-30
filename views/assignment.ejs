@@ -35,7 +35,7 @@
           <td><%= assignment[i].oralMark %></td>
           <td><%= assignment[i].totalMark %></td>
           <td><%= new Intl.DateTimeFormat().format(assignment[i].subDateTime) %></td>
-          <td><a href="<%= 'https://school-app-tomka.herokuapp.com/' + '/edit/' + assignment[i].assignment_id %>"> <button>Edit</button></a></td>
+          <td><a href="<%= 'https://school-app-tomka.herokuapp.com' + '/edit/' + assignment[i].assignment_id %>"> <button>Edit</button></a></td>
           <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= assignment[i].assignment_id %>')"> Delete</button></td>
         </tr>
         <% }; %>

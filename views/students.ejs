@@ -31,7 +31,7 @@
             <td><%= students[i].last_name %></td>
             <td><%= new Intl.DateTimeFormat().format(students[i].dateOfBirth) %></td>
             <td><%= students[i].tuitionFees %></td>
-            <td><a href="<%= 'https://school-app-tomka.herokuapp.com/' + '/edit/' + students[i].student_id %>"> <button>Edit</button></a></td>
+            <td><a href="<%= 'https://school-app-tomka.herokuapp.com' + '/edit/' + students[i].student_id %>"> <button>Edit</button></a></td>
             <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= students[i].student_id %>')"> Delete</button></td>
           </tr>
           <% }; %>

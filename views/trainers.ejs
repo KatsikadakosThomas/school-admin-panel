@@ -24,7 +24,7 @@
           <td><%= trainers[i].first_name %></td>
           <td><%= trainers[i].last_name %></td>
           <td><%= trainers[i].subject %></td>
-          <td><a href="<%= 'https://school-app-tomka.herokuapp.com/' + '/edit/' + trainers[i].trainer_id %>"> <button>Edit</button></a></td>
+          <td><a href="<%= 'https://school-app-tomka.herokuapp.com' + '/edit/' + trainers[i].trainer_id %>"> <button>Edit</button></a></td>
           <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= trainers[i].trainer_id %>')"> Delete</button></td>
         </tr>
         <% }; %>
