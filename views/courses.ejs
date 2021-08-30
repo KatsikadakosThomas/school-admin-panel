@@ -34,7 +34,7 @@
           <td><%= courses[i].type %></td>
           <td><%= new Intl.DateTimeFormat().format(courses[i].start_date) %></td>
           <td><%= new Intl.DateTimeFormat().format(courses[i].end_date) %></td>
-          <td><a href="<%= 'https://school-app-tomka.herokuapp.com' + '/edit/' + courses[i].courses_id %>"> <button>Edit</button></a></td>
+          <td><a href="<%= 'https://school-app-tomka.herokuapp.com/courses' + '/edit/' + courses[i].courses_id %>"> <button>Edit</button></a></td>
           <td><button onclick="deleteEntry('<%= url %>' + '/delete/' + '<%= courses[i].courses_id %>')"> Delete</button></td>
         </tr>
         <% }; %>
