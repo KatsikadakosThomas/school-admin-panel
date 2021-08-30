@@ -11,7 +11,7 @@ router.get("/list/:message?", function (req, res, next) {
 
   dbconnection.query(query, function (err, rows) {
     if (err) {
-      res.render("assignments", {
+      res.render("assignment", {
         title: "Assignments - ERROR",
         assignment: "",
         message: req.params.message,
