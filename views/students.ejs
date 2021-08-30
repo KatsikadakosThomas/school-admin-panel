@@ -27,7 +27,6 @@
           for(var i = 0; i < students.length; i++){ %>
           <tr>
             <td><%= students[i].student_id %></td>
-            <%console.log(students[i].student_id)%>
             <td><%= students[i].first_name %></td>
             <td><%= students[i].last_name %></td>
             <td><%= new Intl.DateTimeFormat().format(students[i].dateOfBirth) %></td>
